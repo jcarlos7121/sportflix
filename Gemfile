@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
 gem 'activerecord-oracle_enhanced-adapter', '~> 1.6.0'
+
 gem 'ruby-oci8'
 
 gem 'devise'
@@ -13,6 +14,8 @@ gem 'puma'
 gem 'rails-erd'
 
 gem 'activeadmin', github: 'activeadmin'
+
+gem 'annotate'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
