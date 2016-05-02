@@ -37,6 +37,7 @@ AddAdminToCategories	db/migrate/20160502023723_add_admin_to_categories.rb	/^clas
 AddAdminToCategory	app/models/add_admin_to_category.rb	/^class AddAdminToCategory < ActiveRecord::Base$/;"	c
 AddInvoicedAmmountToCards	db/migrate/20160502174539_add_invoiced_ammount_to_cards.rb	/^class AddInvoicedAmmountToCards < ActiveRecord::Migration$/;"	c
 AddNameToUser	db/migrate/20160429173008_add_name_to_user.rb	/^class AddNameToUser < ActiveRecord::Migration$/;"	c
+AddPaymentTrackingHistoryTrigger	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^class AddPaymentTrackingHistoryTrigger < ActiveRecord::Migration$/;"	c
 AdminUser	app/models/admin_user.rb	/^class AdminUser < ActiveRecord::Base$/;"	c
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Sportflix
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
@@ -65,6 +66,7 @@ CreateCards	db/migrate/20160502040342_create_cards.rb	/^class CreateCards < Acti
 CreateCategories	db/migrate/20160429164535_create_categories.rb	/^class CreateCategories < ActiveRecord::Migration$/;"	c
 CreateEvents	db/migrate/20160429172053_create_events.rb	/^class CreateEvents < ActiveRecord::Migration$/;"	c
 CreateNews	db/migrate/20160502024217_create_news.rb	/^class CreateNews < ActiveRecord::Migration$/;"	c
+CreatePaymentHistories	db/migrate/20160502175734_create_payment_histories.rb	/^class CreatePaymentHistories < ActiveRecord::Migration$/;"	c
 CreatePayments	db/migrate/20160429171756_create_payments.rb	/^class CreatePayments < ActiveRecord::Migration$/;"	c
 CreateUserEvents	db/migrate/20160429172213_create_user_events.rb	/^class CreateUserEvents < ActiveRecord::Migration$/;"	c
 DeviseCreateAdminUsers	db/migrate/20160429173227_devise_create_admin_users.rb	/^class DeviseCreateAdminUsers < ActiveRecord::Migration$/;"	c
@@ -82,6 +84,7 @@ EVENTS.URL_SERVICE	db/structure.sql	/^ "EVENT_TIME" DATE,$/;"	F
 Event	app/models/event.rb	/^class Event < ActiveRecord::Base$/;"	c
 FrontController	app/controllers/front_controller.rb	/^class FrontController < ApplicationController$/;"	c
 FrontHelper	app/helpers/front_helper.rb	/^module FrontHelper$/;"	m
+LimitPaymentsCharge	db/migrate/20160502195533_limit_payments_charge.rb	/^class LimitPaymentsCharge < ActiveRecord::Migration$/;"	c
 NEWS	db/structure.sql	/^CREATE TABLE "NEWS" ($/;"	t
 NEWS.ADMIN_USER_ID	db/structure.sql	/^ "DATE_PUBLISH" DATE,$/;"	F
 NEWS.CREATED_AT	db/structure.sql	/^ "ADMIN_USER_ID" NUMBER(38,0),$/;"	F
@@ -102,7 +105,15 @@ PAYMENTS.PAYMENT_DATE	db/structure.sql	/^ "MONTH_REFERENCE" DATE,$/;"	F
 PAYMENTS.PAYMENT_TYPE	db/structure.sql	/^ "PAYMENT_DATE" DATE,$/;"	F
 PAYMENTS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 PAYMENTS.USER_ID	db/structure.sql	/^"ID" NUMBER(38,0) NOT NULL,$/;"	F
+PAYMENT_HISTORIES	db/structure.sql	/^CREATE TABLE "PAYMENT_HISTORIES" ($/;"	t
+PAYMENT_HISTORIES.CREATED_AT	db/structure.sql	/^ "PAYMENT_ID" NUMBER(38,0),$/;"	F
+PAYMENT_HISTORIES.ID	db/structure.sql	/^CREATE TABLE "PAYMENT_HISTORIES" ($/;"	F
+PAYMENT_HISTORIES.I_PAYMENT_HISTORIES_PAYMENT_ID	db/structure.sql	/^CREATE  INDEX "I_PAYMENT_HISTORIES_PAYMENT_ID" ON "PAYMENT_HISTORIES" ("PAYMENT_ID")$/;"	i
+PAYMENT_HISTORIES.PAYMENT_ID	db/structure.sql	/^"ID" NUMBER(38,0) NOT NULL,$/;"	F
+PAYMENT_HISTORIES.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 Payment	app/models/payment.rb	/^class Payment < ActiveRecord::Base$/;"	c
+PaymentHistory	app/models/payment_history.rb	/^class PaymentHistory < ActiveRecord::Base$/;"	c
+PremiumSubscribeUsersPrint	db/migrate/20160502200256_premium_subscribe_users_print.rb	/^class PremiumSubscribeUsersPrint < ActiveRecord::Migration$/;"	c
 RenameTypeToEventTypeInEvents	db/migrate/20160502041815_rename_type_to_event_type_in_events.rb	/^class RenameTypeToEventTypeInEvents < ActiveRecord::Migration$/;"	c
 RenameTypeToPaymentTypeInPayments	db/migrate/20160502041559_rename_type_to_payment_type_in_payments.rb	/^class RenameTypeToPaymentTypeInPayments < ActiveRecord::Migration$/;"	c
 SCHEMA_MIGRATIONS	db/structure.sql	/^CREATE TABLE "SCHEMA_MIGRATIONS" ($/;"	t
@@ -135,6 +146,7 @@ USER_EVENTS.INDEX_USER_EVENTS_ON_USER_ID	db/structure.sql	/^CREATE  INDEX "INDEX
 USER_EVENTS.TIMESTAMP	db/structure.sql	/^ "EVENT_ID" NUMBER(38,0),$/;"	F
 USER_EVENTS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 USER_EVENTS.USER_ID	db/structure.sql	/^"ID" NUMBER(38,0) NOT NULL,$/;"	F
+UpgradePaymentType	db/migrate/20160502193942_upgrade_payment_type.rb	/^class UpgradePaymentType < ActiveRecord::Migration$/;"	c
 User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
 UserEvent	app/models/user_event.rb	/^class UserEvent < ActiveRecord::Base$/;"	c
 change	db/migrate/20160429164535_create_categories.rb	/^  def change$/;"	f	class:CreateCategories
@@ -150,6 +162,15 @@ change	db/migrate/20160502040342_create_cards.rb	/^  def change$/;"	f	class:Crea
 change	db/migrate/20160502041559_rename_type_to_payment_type_in_payments.rb	/^  def change$/;"	f	class:RenameTypeToPaymentTypeInPayments
 change	db/migrate/20160502041815_rename_type_to_event_type_in_events.rb	/^  def change$/;"	f	class:RenameTypeToEventTypeInEvents
 change	db/migrate/20160502174539_add_invoiced_ammount_to_cards.rb	/^  def change$/;"	f	class:AddInvoicedAmmountToCards
+change	db/migrate/20160502175734_create_payment_histories.rb	/^  def change$/;"	f	class:CreatePaymentHistories
 down	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.down$/;"	F	class:CreateActiveAdminComments
+down	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^  def down$/;"	f	class:AddPaymentTrackingHistoryTrigger.up
+down	db/migrate/20160502193942_upgrade_payment_type.rb	/^  def down$/;"	f	class:UpgradePaymentType.up
+down	db/migrate/20160502195533_limit_payments_charge.rb	/^  def down$/;"	f	class:LimitPaymentsCharge.up
+down	db/migrate/20160502200256_premium_subscribe_users_print.rb	/^  def down$/;"	f	class:PremiumSubscribeUsersPrint
 index	app/controllers/front_controller.rb	/^  def index$/;"	f	class:FrontController
 up	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.up$/;"	F	class:CreateActiveAdminComments
+up	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^  def up$/;"	f	class:AddPaymentTrackingHistoryTrigger
+up	db/migrate/20160502193942_upgrade_payment_type.rb	/^  def up$/;"	f	class:UpgradePaymentType
+up	db/migrate/20160502195533_limit_payments_charge.rb	/^  def up$/;"	f	class:LimitPaymentsCharge
+up	db/migrate/20160502200256_premium_subscribe_users_print.rb	/^  def up$/;"	f	class:PremiumSubscribeUsersPrint
