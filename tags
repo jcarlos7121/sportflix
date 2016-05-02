@@ -61,6 +61,7 @@ CATEGORIES.NAME	db/structure.sql	/^"ID" NUMBER(38,0) NOT NULL,$/;"	F
 CATEGORIES.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 Card	app/models/card.rb	/^class Card < ActiveRecord::Base$/;"	c
 Category	app/models/category.rb	/^class Category < ActiveRecord::Base$/;"	c
+CategoryAdminsView	db/migrate/20160502210351_category_admins_view.rb	/^class CategoryAdminsView < ActiveRecord::Migration$/;"	c
 CreateActiveAdminComments	db/migrate/20160429173229_create_active_admin_comments.rb	/^class CreateActiveAdminComments < ActiveRecord::Migration$/;"	c
 CreateCards	db/migrate/20160502040342_create_cards.rb	/^class CreateCards < ActiveRecord::Migration$/;"	c
 CreateCategories	db/migrate/20160429164535_create_categories.rb	/^class CreateCategories < ActiveRecord::Migration$/;"	c
@@ -68,6 +69,7 @@ CreateEvents	db/migrate/20160429172053_create_events.rb	/^class CreateEvents < A
 CreateNews	db/migrate/20160502024217_create_news.rb	/^class CreateNews < ActiveRecord::Migration$/;"	c
 CreatePaymentHistories	db/migrate/20160502175734_create_payment_histories.rb	/^class CreatePaymentHistories < ActiveRecord::Migration$/;"	c
 CreatePayments	db/migrate/20160429171756_create_payments.rb	/^class CreatePayments < ActiveRecord::Migration$/;"	c
+CreatePremiumSubscribers	db/migrate/20160502201533_create_premium_subscribers.rb	/^class CreatePremiumSubscribers < ActiveRecord::Migration$/;"	c
 CreateUserEvents	db/migrate/20160429172213_create_user_events.rb	/^class CreateUserEvents < ActiveRecord::Migration$/;"	c
 DeviseCreateAdminUsers	db/migrate/20160429173227_devise_create_admin_users.rb	/^class DeviseCreateAdminUsers < ActiveRecord::Migration$/;"	c
 DeviseCreateUsers	db/migrate/20160429170446_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration$/;"	c
@@ -82,6 +84,7 @@ EVENTS.NAME	db/structure.sql	/^ "CATEGORY_ID" NUMBER(38,0),$/;"	F
 EVENTS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 EVENTS.URL_SERVICE	db/structure.sql	/^ "EVENT_TIME" DATE,$/;"	F
 Event	app/models/event.rb	/^class Event < ActiveRecord::Base$/;"	c
+EventVisitsSummary	db/migrate/20160502203645_event_visits_summary.rb	/^class EventVisitsSummary < ActiveRecord::Migration$/;"	c
 FrontController	app/controllers/front_controller.rb	/^class FrontController < ApplicationController$/;"	c
 FrontHelper	app/helpers/front_helper.rb	/^module FrontHelper$/;"	m
 LimitPaymentsCharge	db/migrate/20160502195533_limit_payments_charge.rb	/^class LimitPaymentsCharge < ActiveRecord::Migration$/;"	c
@@ -113,7 +116,6 @@ PAYMENT_HISTORIES.PAYMENT_ID	db/structure.sql	/^"ID" NUMBER(38,0) NOT NULL,$/;"	
 PAYMENT_HISTORIES.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 Payment	app/models/payment.rb	/^class Payment < ActiveRecord::Base$/;"	c
 PaymentHistory	app/models/payment_history.rb	/^class PaymentHistory < ActiveRecord::Base$/;"	c
-PremiumSubscribeUsersPrint	db/migrate/20160502200256_premium_subscribe_users_print.rb	/^class PremiumSubscribeUsersPrint < ActiveRecord::Migration$/;"	c
 RenameTypeToEventTypeInEvents	db/migrate/20160502041815_rename_type_to_event_type_in_events.rb	/^class RenameTypeToEventTypeInEvents < ActiveRecord::Migration$/;"	c
 RenameTypeToPaymentTypeInPayments	db/migrate/20160502041559_rename_type_to_payment_type_in_payments.rb	/^class RenameTypeToPaymentTypeInPayments < ActiveRecord::Migration$/;"	c
 SCHEMA_MIGRATIONS	db/structure.sql	/^CREATE TABLE "SCHEMA_MIGRATIONS" ($/;"	t
@@ -167,10 +169,14 @@ down	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.down
 down	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^  def down$/;"	f	class:AddPaymentTrackingHistoryTrigger.up
 down	db/migrate/20160502193942_upgrade_payment_type.rb	/^  def down$/;"	f	class:UpgradePaymentType.up
 down	db/migrate/20160502195533_limit_payments_charge.rb	/^  def down$/;"	f	class:LimitPaymentsCharge.up
-down	db/migrate/20160502200256_premium_subscribe_users_print.rb	/^  def down$/;"	f	class:PremiumSubscribeUsersPrint
+down	db/migrate/20160502201533_create_premium_subscribers.rb	/^  def down$/;"	f	class:CreatePremiumSubscribers
+down	db/migrate/20160502203645_event_visits_summary.rb	/^  def down$/;"	f	class:EventVisitsSummary
+down	db/migrate/20160502210351_category_admins_view.rb	/^  def down$/;"	f	class:CategoryAdminsView
 index	app/controllers/front_controller.rb	/^  def index$/;"	f	class:FrontController
 up	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.up$/;"	F	class:CreateActiveAdminComments
 up	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^  def up$/;"	f	class:AddPaymentTrackingHistoryTrigger
 up	db/migrate/20160502193942_upgrade_payment_type.rb	/^  def up$/;"	f	class:UpgradePaymentType
 up	db/migrate/20160502195533_limit_payments_charge.rb	/^  def up$/;"	f	class:LimitPaymentsCharge
-up	db/migrate/20160502200256_premium_subscribe_users_print.rb	/^  def up$/;"	f	class:PremiumSubscribeUsersPrint
+up	db/migrate/20160502201533_create_premium_subscribers.rb	/^  def up$/;"	f	class:CreatePremiumSubscribers
+up	db/migrate/20160502203645_event_visits_summary.rb	/^  def up$/;"	f	class:EventVisitsSummary
+up	db/migrate/20160502210351_category_admins_view.rb	/^  def up$/;"	f	class:CategoryAdminsView
