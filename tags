@@ -35,6 +35,7 @@ ADMIN_USERS.SIGN_IN_COUNT	db/structure.sql	/^ "REMEMBER_CREATED_AT" DATE,$/;"	F
 ADMIN_USERS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 AddAdminToCategories	db/migrate/20160502023723_add_admin_to_categories.rb	/^class AddAdminToCategories < ActiveRecord::Migration$/;"	c
 AddAdminToCategory	app/models/add_admin_to_category.rb	/^class AddAdminToCategory < ActiveRecord::Base$/;"	c
+AddInvoicedAmmountToCards	db/migrate/20160502174539_add_invoiced_ammount_to_cards.rb	/^class AddInvoicedAmmountToCards < ActiveRecord::Migration$/;"	c
 AddNameToUser	db/migrate/20160429173008_add_name_to_user.rb	/^class AddNameToUser < ActiveRecord::Migration$/;"	c
 AdminUser	app/models/admin_user.rb	/^class AdminUser < ActiveRecord::Base$/;"	c
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Sportflix
@@ -47,6 +48,7 @@ CARDS.CVV	db/structure.sql	/^ "USER_ID" NUMBER(38,0),$/;"	F
 CARDS.EXPIRATION_DATE	db/structure.sql	/^ "CVV" VARCHAR2(255),$/;"	F
 CARDS.ID	db/structure.sql	/^CREATE TABLE "CARDS" ($/;"	F
 CARDS.INDEX_CARDS_ON_USER_ID	db/structure.sql	/^CREATE  INDEX "INDEX_CARDS_ON_USER_ID" ON "CARDS" ("USER_ID")$/;"	i
+CARDS.INVOICED_AMMOUNT	db/structure.sql	/^ "UPDATED_AT" DATE NOT NULL,$/;"	F
 CARDS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 CARDS.USER_ID	db/structure.sql	/^"ID" NUMBER(38,0) NOT NULL,$/;"	F
 CATEGORIES	db/structure.sql	/^CREATE TABLE "CATEGORIES" ($/;"	t
@@ -147,6 +149,7 @@ change	db/migrate/20160502024217_create_news.rb	/^  def change$/;"	f	class:Creat
 change	db/migrate/20160502040342_create_cards.rb	/^  def change$/;"	f	class:CreateCards
 change	db/migrate/20160502041559_rename_type_to_payment_type_in_payments.rb	/^  def change$/;"	f	class:RenameTypeToPaymentTypeInPayments
 change	db/migrate/20160502041815_rename_type_to_event_type_in_events.rb	/^  def change$/;"	f	class:RenameTypeToEventTypeInEvents
+change	db/migrate/20160502174539_add_invoiced_ammount_to_cards.rb	/^  def change$/;"	f	class:AddInvoicedAmmountToCards
 down	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.down$/;"	F	class:CreateActiveAdminComments
 index	app/controllers/front_controller.rb	/^  def index$/;"	f	class:FrontController
 up	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.up$/;"	F	class:CreateActiveAdminComments

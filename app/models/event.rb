@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  category_id :integer
 #  name        :string(255)
-#  type        :integer
+#  event_type  :integer
 #  event_time  :datetime
 #  url_service :string(255)
 #  created_at  :datetime         not null

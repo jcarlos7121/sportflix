@@ -6,7 +6,7 @@
 #  user_id         :integer
 #  month_reference :datetime
 #  payment_date    :datetime
-#  type            :integer
+#  payment_type    :integer
 #  cost            :float
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
