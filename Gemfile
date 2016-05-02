@@ -17,6 +17,12 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'annotate'
 
+gem 'models-to-sql-rails', :git => 'git://github.com/paladini/models-to-sql-rails.git'
+
+gem 'factory_girl_rails'
+
+gem 'pry-rails', group: :development
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,6 +53,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'factory_girl'
+  gem 'faker'
 end
 
 group :development do
