@@ -35,9 +35,12 @@ ADMIN_USERS.SIGN_IN_COUNT	db/structure.sql	/^ "REMEMBER_CREATED_AT" DATE,$/;"	F
 ADMIN_USERS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 AddAdminToCategories	db/migrate/20160502023723_add_admin_to_categories.rb	/^class AddAdminToCategories < ActiveRecord::Migration$/;"	c
 AddAdminToCategory	app/models/add_admin_to_category.rb	/^class AddAdminToCategory < ActiveRecord::Base$/;"	c
+AddFunctionGetCardNumberCount	db/migrate/20160503045036_add_function_get_card_number_count.rb	/^class AddFunctionGetCardNumberCount < ActiveRecord::Migration$/;"	c
+AddGreatestPaymentCount	db/migrate/20160503043951_add_greatest_payment_count.rb	/^class AddGreatestPaymentCount < ActiveRecord::Migration$/;"	c
 AddInvoicedAmmountToCards	db/migrate/20160502174539_add_invoiced_ammount_to_cards.rb	/^class AddInvoicedAmmountToCards < ActiveRecord::Migration$/;"	c
 AddNameToUser	db/migrate/20160429173008_add_name_to_user.rb	/^class AddNameToUser < ActiveRecord::Migration$/;"	c
 AddPaymentTrackingHistoryTrigger	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^class AddPaymentTrackingHistoryTrigger < ActiveRecord::Migration$/;"	c
+AddUserSubscriptionTypeFunction	db/migrate/20160503034245_add_user_subscription_type_function.rb	/^class AddUserSubscriptionTypeFunction < ActiveRecord::Migration$/;"	c
 AdminUser	app/models/admin_user.rb	/^class AdminUser < ActiveRecord::Base$/;"	c
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Sportflix
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
@@ -172,6 +175,9 @@ down	db/migrate/20160502195533_limit_payments_charge.rb	/^  def down$/;"	f	class
 down	db/migrate/20160502201533_create_premium_subscribers.rb	/^  def down$/;"	f	class:CreatePremiumSubscribers
 down	db/migrate/20160502203645_event_visits_summary.rb	/^  def down$/;"	f	class:EventVisitsSummary
 down	db/migrate/20160502210351_category_admins_view.rb	/^  def down$/;"	f	class:CategoryAdminsView
+down	db/migrate/20160503034245_add_user_subscription_type_function.rb	/^  def down$/;"	f	class:AddUserSubscriptionTypeFunction
+down	db/migrate/20160503043951_add_greatest_payment_count.rb	/^  def down$/;"	f	class:AddGreatestPaymentCount
+down	db/migrate/20160503045036_add_function_get_card_number_count.rb	/^  def down$/;"	f	class:AddFunctionGetCardNumberCount
 index	app/controllers/front_controller.rb	/^  def index$/;"	f	class:FrontController
 up	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.up$/;"	F	class:CreateActiveAdminComments
 up	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^  def up$/;"	f	class:AddPaymentTrackingHistoryTrigger
@@ -180,3 +186,6 @@ up	db/migrate/20160502195533_limit_payments_charge.rb	/^  def up$/;"	f	class:Lim
 up	db/migrate/20160502201533_create_premium_subscribers.rb	/^  def up$/;"	f	class:CreatePremiumSubscribers
 up	db/migrate/20160502203645_event_visits_summary.rb	/^  def up$/;"	f	class:EventVisitsSummary
 up	db/migrate/20160502210351_category_admins_view.rb	/^  def up$/;"	f	class:CategoryAdminsView
+up	db/migrate/20160503034245_add_user_subscription_type_function.rb	/^  def up$/;"	f	class:AddUserSubscriptionTypeFunction
+up	db/migrate/20160503043951_add_greatest_payment_count.rb	/^  def up$/;"	f	class:AddGreatestPaymentCount
+up	db/migrate/20160503045036_add_function_get_card_number_count.rb	/^  def up$/;"	f	class:AddFunctionGetCardNumberCount

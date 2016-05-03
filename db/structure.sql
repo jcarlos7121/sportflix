@@ -506,4 +506,16 @@ INSERT INTO schema_migrations (version) VALUES ('20160502210351')
 
 /
 
+INSERT INTO schema_migrations (version) VALUES ('20160503034245')
+
+/
+
+INSERT INTO schema_migrations (version) VALUES ('20160503043951')
+
+/
+
+INSERT INTO schema_migrations (version) VALUES ('20160503045036')
+
+/
+
 
