@@ -29,6 +29,9 @@ ActiveAdmin.register Payment do
       r.payment_date
     end
     column :cost
+    column :created_at do |t|
+      t.created_at
+    end
     actions defaults: true do |payment|
       link_to(
         'Pagar',
