@@ -1,5 +1,5 @@
 class EventVisitsSummary < ActiveRecord::Migration
-  VIEW_NAME = 'eventVisitsSummary'
+  VIEW_NAME = 'EVENT_VISIT_SUMMARIES'
 
   def up
     execute <<-SQL

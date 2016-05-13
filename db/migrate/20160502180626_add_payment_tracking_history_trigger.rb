@@ -4,11 +4,16 @@ class AddPaymentTrackingHistoryTrigger < ActiveRecord::Migration
   def up
     execute <<-SQL
       create or replace trigger #{TRIGGER_NAME}
-      after update on payments
+      before update on PAYMENTS
       for each row
+      declare
+      new_id payment_histories.id%type;
       begin
-        INSERT INTO PAYMENT_HISTORIES(payment_id) values(:new.id)
-      end;
+        SELECT PAYMENT_HISTORIES_SEQ.NEXTVAL
+          INTO   new_id
+          FROM   dual;
+        INSERT INTO PAYMENT_HISTORIES(id, PAYMENT_ID, CREATED_AT, UPDATED_AT) values(new_id, :new.ID, SYSDATE, SYSDATE);
+        end;
     SQL
   end
 

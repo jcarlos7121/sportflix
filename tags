@@ -28,6 +28,7 @@ ADMIN_USERS.INDEX_ADMIN_USERS_ON_EMAIL	db/structure.sql	/^CREATE UNIQUE INDEX "I
 ADMIN_USERS.I_ADM_USE_RES_PAS_TOK	db/structure.sql	/^CREATE UNIQUE INDEX "I_ADM_USE_RES_PAS_TOK" ON "ADMIN_USERS" ("RESET_PASSWORD_TOKEN")$/;"	i
 ADMIN_USERS.LAST_SIGN_IN_AT	db/structure.sql	/^ "CURRENT_SIGN_IN_AT" DATE,$/;"	F
 ADMIN_USERS.LAST_SIGN_IN_IP	db/structure.sql	/^ "CURRENT_SIGN_IN_IP" VARCHAR2(255),$/;"	F
+ADMIN_USERS.NAME	db/structure.sql	/^ "UPDATED_AT" DATE NOT NULL,$/;"	F
 ADMIN_USERS.REMEMBER_CREATED_AT	db/structure.sql	/^ "RESET_PASSWORD_SENT_AT" DATE,$/;"	F
 ADMIN_USERS.RESET_PASSWORD_SENT_AT	db/structure.sql	/^ "RESET_PASSWORD_TOKEN" VARCHAR2(255),$/;"	F
 ADMIN_USERS.RESET_PASSWORD_TOKEN	db/structure.sql	/^ "ENCRYPTED_PASSWORD" VARCHAR2(255) DEFAULT ''  NOT NULL,$/;"	F
@@ -36,9 +37,15 @@ ADMIN_USERS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 AddAdminToCategories	db/migrate/20160502023723_add_admin_to_categories.rb	/^class AddAdminToCategories < ActiveRecord::Migration$/;"	c
 AddAdminToCategory	app/models/add_admin_to_category.rb	/^class AddAdminToCategory < ActiveRecord::Base$/;"	c
 AddFunctionGetCardNumberCount	db/migrate/20160503045036_add_function_get_card_number_count.rb	/^class AddFunctionGetCardNumberCount < ActiveRecord::Migration$/;"	c
+AddFunctionMonthSales	db/migrate/20160513041020_add_function_month_sales.rb	/^class AddFunctionMonthSales < ActiveRecord::Migration$/;"	c
+AddGetViewsFunction	db/migrate/20160513045157_add_get_views_function.rb	/^class AddGetViewsFunction < ActiveRecord::Migration$/;"	c
 AddGreatestPaymentCount	db/migrate/20160503043951_add_greatest_payment_count.rb	/^class AddGreatestPaymentCount < ActiveRecord::Migration$/;"	c
+AddInvoiceTrigger	db/migrate/20160513051006_add_invoice_trigger.rb	/^class AddInvoiceTrigger < ActiveRecord::Migration$/;"	c
 AddInvoicedAmmountToCards	db/migrate/20160502174539_add_invoiced_ammount_to_cards.rb	/^class AddInvoicedAmmountToCards < ActiveRecord::Migration$/;"	c
+AddLogsToUsersTrigger	db/migrate/20160513051944_add_logs_to_users_trigger.rb	/^class AddLogsToUsersTrigger < ActiveRecord::Migration$/;"	c
+AddNameToAdminUser	db/migrate/20160513025254_add_name_to_admin_user.rb	/^class AddNameToAdminUser < ActiveRecord::Migration$/;"	c
 AddNameToUser	db/migrate/20160429173008_add_name_to_user.rb	/^class AddNameToUser < ActiveRecord::Migration$/;"	c
+AddOlapFactTable	db/migrate/20160513055329_add_olap_fact_table.rb	/^class AddOlapFactTable < ActiveRecord::Migration$/;"	c
 AddPaymentTrackingHistoryTrigger	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^class AddPaymentTrackingHistoryTrigger < ActiveRecord::Migration$/;"	c
 AddPrintPedroProcedure	db/migrate/20160503053557_add_print_pedro_procedure.rb	/^class AddPrintPedroProcedure < ActiveRecord::Migration$/;"	c
 AddStoredProcedureInsertCard	db/migrate/20160503050502_add_stored_procedure_insert_card.rb	/^class AddStoredProcedureInsertCard < ActiveRecord::Migration$/;"	c
@@ -89,6 +96,7 @@ EVENTS.NAME	db/structure.sql	/^ "CATEGORY_ID" NUMBER(38,0),$/;"	F
 EVENTS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 EVENTS.URL_SERVICE	db/structure.sql	/^ "EVENT_TIME" DATE,$/;"	F
 Event	app/models/event.rb	/^class Event < ActiveRecord::Base$/;"	c
+EventVisitSummary	app/models/event_visit_summary.rb	/^class EventVisitSummary < ActiveRecord::Base$/;"	c
 EventVisitsSummary	db/migrate/20160502203645_event_visits_summary.rb	/^class EventVisitsSummary < ActiveRecord::Migration$/;"	c
 FrontController	app/controllers/front_controller.rb	/^class FrontController < ApplicationController$/;"	c
 FrontHelper	app/helpers/front_helper.rb	/^module FrontHelper$/;"	m
@@ -103,6 +111,7 @@ NEWS.TEXT	db/structure.sql	/^ "TITLE" VARCHAR2(255),$/;"	F
 NEWS.TITLE	db/structure.sql	/^"ID" NUMBER(38,0) NOT NULL,$/;"	F
 NEWS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 New	app/models/new.rb	/^class New < ActiveRecord::Base$/;"	c
+Olap	app/models/olap.rb	/^class Olap < ActiveRecord::Base$/;"	c
 PAYMENTS	db/structure.sql	/^CREATE TABLE "PAYMENTS" ($/;"	t
 PAYMENTS.COST	db/structure.sql	/^ "PAYMENT_TYPE" NUMBER(38,0),$/;"	F
 PAYMENTS.CREATED_AT	db/structure.sql	/^ "COST" BINARY_FLOAT,$/;"	F
@@ -171,6 +180,7 @@ change	db/migrate/20160502041559_rename_type_to_payment_type_in_payments.rb	/^  
 change	db/migrate/20160502041815_rename_type_to_event_type_in_events.rb	/^  def change$/;"	f	class:RenameTypeToEventTypeInEvents
 change	db/migrate/20160502174539_add_invoiced_ammount_to_cards.rb	/^  def change$/;"	f	class:AddInvoicedAmmountToCards
 change	db/migrate/20160502175734_create_payment_histories.rb	/^  def change$/;"	f	class:CreatePaymentHistories
+change	db/migrate/20160513025254_add_name_to_admin_user.rb	/^  def change$/;"	f	class:AddNameToAdminUser
 down	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.down$/;"	F	class:CreateActiveAdminComments
 down	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^  def down$/;"	f	class:AddPaymentTrackingHistoryTrigger.up
 down	db/migrate/20160502193942_upgrade_payment_type.rb	/^  def down$/;"	f	class:UpgradePaymentType.up
@@ -184,6 +194,11 @@ down	db/migrate/20160503045036_add_function_get_card_number_count.rb	/^  def dow
 down	db/migrate/20160503050502_add_stored_procedure_insert_card.rb	/^  def down$/;"	f	class:AddStoredProcedureInsertCard
 down	db/migrate/20160503052849_update_card_procedure.rb	/^  def down$/;"	f	class:UpdateCardProcedure
 down	db/migrate/20160503053557_add_print_pedro_procedure.rb	/^  def down$/;"	f	class:AddPrintPedroProcedure
+down	db/migrate/20160513041020_add_function_month_sales.rb	/^  def down$/;"	f	class:AddFunctionMonthSales
+down	db/migrate/20160513045157_add_get_views_function.rb	/^  def down$/;"	f	class:AddGetViewsFunction
+down	db/migrate/20160513051006_add_invoice_trigger.rb	/^  def down$/;"	f	class:AddInvoiceTrigger
+down	db/migrate/20160513051944_add_logs_to_users_trigger.rb	/^  def down$/;"	f	class:AddLogsToUsersTrigger
+down	db/migrate/20160513055329_add_olap_fact_table.rb	/^  def down$/;"	f	class:AddOlapFactTable
 index	app/controllers/front_controller.rb	/^  def index$/;"	f	class:FrontController
 up	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.up$/;"	F	class:CreateActiveAdminComments
 up	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^  def up$/;"	f	class:AddPaymentTrackingHistoryTrigger
@@ -198,3 +213,8 @@ up	db/migrate/20160503045036_add_function_get_card_number_count.rb	/^  def up$/;
 up	db/migrate/20160503050502_add_stored_procedure_insert_card.rb	/^  def up$/;"	f	class:AddStoredProcedureInsertCard
 up	db/migrate/20160503052849_update_card_procedure.rb	/^  def up$/;"	f	class:UpdateCardProcedure
 up	db/migrate/20160503053557_add_print_pedro_procedure.rb	/^  def up$/;"	f	class:AddPrintPedroProcedure
+up	db/migrate/20160513041020_add_function_month_sales.rb	/^  def up$/;"	f	class:AddFunctionMonthSales
+up	db/migrate/20160513045157_add_get_views_function.rb	/^  def up$/;"	f	class:AddGetViewsFunction
+up	db/migrate/20160513051006_add_invoice_trigger.rb	/^  def up$/;"	f	class:AddInvoiceTrigger
+up	db/migrate/20160513051944_add_logs_to_users_trigger.rb	/^  def up$/;"	f	class:AddLogsToUsersTrigger
+up	db/migrate/20160513055329_add_olap_fact_table.rb	/^  def up$/;"	f	class:AddOlapFactTable

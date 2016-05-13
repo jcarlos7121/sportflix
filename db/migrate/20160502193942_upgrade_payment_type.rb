@@ -6,9 +6,9 @@ class UpgradePaymentType < ActiveRecord::Migration
       create or replace trigger #{TRIGGER_NAME}
       before update on payments
       for each row
-      when(old.payment_type = 0 and new.payment_type = 1)
+      when(old.payment_type = 1 and new.payment_type = 0)
       begin
-        :new.salary := :9.9;
+        :new.cost := 15;
       end;
     SQL
   end

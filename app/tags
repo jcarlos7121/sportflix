@@ -1,0 +1,21 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AddAdminToCategory	models/add_admin_to_category.rb	/^class AddAdminToCategory < ActiveRecord::Base$/;"	c
+AdminUser	models/admin_user.rb	/^class AdminUser < ActiveRecord::Base$/;"	c
+ApplicationController	controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+Card	models/card.rb	/^class Card < ActiveRecord::Base$/;"	c
+Category	models/category.rb	/^class Category < ActiveRecord::Base$/;"	c
+Event	models/event.rb	/^class Event < ActiveRecord::Base$/;"	c
+FrontController	controllers/front_controller.rb	/^class FrontController < ApplicationController$/;"	c
+FrontHelper	helpers/front_helper.rb	/^module FrontHelper$/;"	m
+New	models/new.rb	/^class New < ActiveRecord::Base$/;"	c
+Payment	models/payment.rb	/^class Payment < ActiveRecord::Base$/;"	c
+PaymentHistory	models/payment_history.rb	/^class PaymentHistory < ActiveRecord::Base$/;"	c
+User	models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UserEvent	models/user_event.rb	/^class UserEvent < ActiveRecord::Base$/;"	c
+index	controllers/front_controller.rb	/^  def index$/;"	f	class:FrontController
