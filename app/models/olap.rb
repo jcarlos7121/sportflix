@@ -3,5 +3,5 @@ class Olap < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :payment
-  belongs_to :user_event
+  belongs_to :event
 end

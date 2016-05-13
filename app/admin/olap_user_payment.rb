@@ -1,5 +1,5 @@
-ActiveAdmin.register Olap do
-  menu label: 'olap'
+ActiveAdmin.register OlapUserPayment do
+  menu label: 'User payments'
   actions :index
 
   config.filters = false
@@ -7,8 +7,7 @@ ActiveAdmin.register Olap do
   index do
     selectable_column
     column :user
-    column :payment
-    column :event
+    column :total_payment
     actions
   end
 end

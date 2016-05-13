@@ -1,5 +1,8 @@
 ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation, :name, :current_sign_in_at
+  filter :name
+  filter :email
+  filter :created_at
 
   index do
     selectable_column
