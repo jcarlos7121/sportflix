@@ -36,6 +36,7 @@ ADMIN_USERS.SIGN_IN_COUNT	db/structure.sql	/^ "REMEMBER_CREATED_AT" DATE,$/;"	F
 ADMIN_USERS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 AddAdminToCategories	db/migrate/20160502023723_add_admin_to_categories.rb	/^class AddAdminToCategories < ActiveRecord::Migration$/;"	c
 AddAdminToCategory	app/models/add_admin_to_category.rb	/^class AddAdminToCategory < ActiveRecord::Base$/;"	c
+AddContraintMultipleIdsUserEvents	db/migrate/20160513181741_add_contraint_multiple_ids_user_events.rb	/^class AddContraintMultipleIdsUserEvents < ActiveRecord::Migration$/;"	c
 AddFunctionGetCardNumberCount	db/migrate/20160503045036_add_function_get_card_number_count.rb	/^class AddFunctionGetCardNumberCount < ActiveRecord::Migration$/;"	c
 AddFunctionMonthSales	db/migrate/20160513041020_add_function_month_sales.rb	/^class AddFunctionMonthSales < ActiveRecord::Migration$/;"	c
 AddGetViewsFunction	db/migrate/20160513045157_add_get_views_function.rb	/^class AddGetViewsFunction < ActiveRecord::Migration$/;"	c
@@ -180,6 +181,7 @@ change	db/migrate/20160502041815_rename_type_to_event_type_in_events.rb	/^  def 
 change	db/migrate/20160502174539_add_invoiced_ammount_to_cards.rb	/^  def change$/;"	f	class:AddInvoicedAmmountToCards
 change	db/migrate/20160502175734_create_payment_histories.rb	/^  def change$/;"	f	class:CreatePaymentHistories
 change	db/migrate/20160513025254_add_name_to_admin_user.rb	/^  def change$/;"	f	class:AddNameToAdminUser
+change	db/migrate/20160513181741_add_contraint_multiple_ids_user_events.rb	/^  def change$/;"	f	class:AddContraintMultipleIdsUserEvents
 down	db/migrate/20160429173229_create_active_admin_comments.rb	/^  def self.down$/;"	F	class:CreateActiveAdminComments
 down	db/migrate/20160502180626_add_payment_tracking_history_trigger.rb	/^  def down$/;"	f	class:AddPaymentTrackingHistoryTrigger.up
 down	db/migrate/20160502193942_upgrade_payment_type.rb	/^  def down$/;"	f	class:UpgradePaymentType.up
