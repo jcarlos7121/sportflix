@@ -1,6 +1,15 @@
 ActiveAdmin.register Payment do
   permit_params :user_id, :month_reference, :payment_date, :payment_type, :cost
 
+  action_item :modify_unpaid_months, only: :index do
+    link_to 'Agregar interes', modify_unpaid_months_admin_payments_path
+  end
+
+  collection_action :modify_unpaid_months do
+    ActiveRecord::Base.connection.execute('call modify_cost()')
+    redirect_to :back, notice: 'Modified succesfully!'
+  end
+
   member_action :pay_month, method: :post do
     Payment.transaction do
       resource.update payment_date: Time.zone.now
