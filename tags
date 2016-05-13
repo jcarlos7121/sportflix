@@ -155,13 +155,12 @@ USERS.SIGN_IN_COUNT	db/structure.sql	/^ "REMEMBER_CREATED_AT" DATE,$/;"	F
 USERS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
 USER_EVENTS	db/structure.sql	/^CREATE TABLE "USER_EVENTS" ($/;"	t
 USER_EVENTS.CREATED_AT	db/structure.sql	/^ "TIMESTAMP" TIMESTAMP(6),$/;"	F
-USER_EVENTS.EVENT_ID	db/structure.sql	/^ "USER_ID" NUMBER(38,0),$/;"	F
-USER_EVENTS.ID	db/structure.sql	/^CREATE TABLE "USER_EVENTS" ($/;"	F
+USER_EVENTS.EVENT_ID	db/structure.sql	/^"USER_ID" NUMBER(38,0),$/;"	F
 USER_EVENTS.INDEX_USER_EVENTS_ON_EVENT_ID	db/structure.sql	/^CREATE  INDEX "INDEX_USER_EVENTS_ON_EVENT_ID" ON "USER_EVENTS" ("EVENT_ID")$/;"	i
 USER_EVENTS.INDEX_USER_EVENTS_ON_USER_ID	db/structure.sql	/^CREATE  INDEX "INDEX_USER_EVENTS_ON_USER_ID" ON "USER_EVENTS" ("USER_ID")$/;"	i
 USER_EVENTS.TIMESTAMP	db/structure.sql	/^ "EVENT_ID" NUMBER(38,0),$/;"	F
 USER_EVENTS.UPDATED_AT	db/structure.sql	/^ "CREATED_AT" DATE NOT NULL,$/;"	F
-USER_EVENTS.USER_ID	db/structure.sql	/^"ID" NUMBER(38,0) NOT NULL,$/;"	F
+USER_EVENTS.USER_ID	db/structure.sql	/^CREATE TABLE "USER_EVENTS" ($/;"	F
 UpdateCardProcedure	db/migrate/20160503052849_update_card_procedure.rb	/^class UpdateCardProcedure < ActiveRecord::Migration$/;"	c
 UpgradePaymentType	db/migrate/20160502193942_upgrade_payment_type.rb	/^class UpgradePaymentType < ActiveRecord::Migration$/;"	c
 User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
